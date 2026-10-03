@@ -34,6 +34,7 @@ const (
 
 func setAppRoleToken(ctx context.Context, v *client) (bool, error) {
 	appRole := v.store.Auth.AppRole
+	// Templating AppRole here.
 	if appRole != nil {
 		err := v.requestTokenWithAppRoleRef(ctx, appRole)
 		if err != nil {
